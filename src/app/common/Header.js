@@ -1,4 +1,6 @@
-import * as React from "react";
+/* eslint-disable react/react-in-jsx-scope -- Unaware of jsxImportSource */
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
 import { AppBar, Box, Toolbar, Typography, Button, IconButton } from '@mui/material'
 import MenuIcon from "@mui/icons-material/Menu";
 
@@ -16,8 +18,8 @@ const Header = () => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
+          <Typography css={css`font-weight: bold`} variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            Rarity Nerds
           </Typography>
           <Button color="inherit">Login</Button>
         </Toolbar>

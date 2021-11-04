@@ -15,7 +15,7 @@ const theme = createTheme({
     }
   },
   typography: {
-    fontFamily: "'Lato', sans-serif",
+    fontFamily: "'Kanit', sans-serif",
   },
 });
 
@@ -30,7 +30,7 @@ const darkTheme = createTheme({
     }
   },
   typography: {
-    fontFamily: "'Lato', sans-serif",
+    fontFamily: "'Kanit', sans-serif",
   },
 });
 
