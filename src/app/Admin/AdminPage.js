@@ -2,16 +2,28 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import { Button, Divider } from '@mui/material';
-
+import { useNavigate } from 'react-router-dom';
 
 // Go for creating collections
 // Table of collections
 
 const AdminPage = () => {
-    return <div css={css`padding: 2em`}>
-        <Button variant="text" color="primary">Add Collection</Button>
-        <Divider css={css`margin-top: 0.5em`} />
-    </div>
-}
+	const navigate = useNavigate();
 
-export default AdminPage
+	return (
+		<div css={css`padding: 2em;`}>
+			<Button
+				onClick={() => {
+					navigate('add-collection');
+				}}
+				variant="text"
+				color="primary"
+			>
+				Add Collection
+			</Button>
+			<Divider css={css`margin-top: 0.5em;`} />
+		</div>
+	);
+};
+
+export default AdminPage;
