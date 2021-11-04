@@ -29,6 +29,18 @@ const HomePage = () => {
 				<Grid item md={6}>
 					<CollectionCard collection={collection} />
 				</Grid>
+        <Grid item md={6}>
+					<CollectionCard collection={collection} />
+				</Grid>
+				<Grid item md={6}>
+					<CollectionCard collection={collection} />
+				</Grid>
+        <Grid item md={6}>
+					<CollectionCard collection={collection} />
+				</Grid>
+				<Grid item md={6}>
+					<CollectionCard collection={collection} />
+				</Grid>
 			</Grid>
 		</div>
 	);

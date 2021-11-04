@@ -10,6 +10,7 @@ const CollectionCard = ({ collection }) => {
 			css={css`
 				cursor: pointer;
 				position: relative;
+        margin-bottom: 1em
 			`}
 		>
 			<div
@@ -23,6 +24,7 @@ const CollectionCard = ({ collection }) => {
 					css={css`
 						width: 100%;
 						height: 100%;
+            object-fit: cover
 					`}
 				/>
 			</div>
