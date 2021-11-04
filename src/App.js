@@ -3,16 +3,12 @@ import Router from "./app/router";
 
 const theme = createTheme({
   palette: {
-    primary: { main: "#d90429" },
-    secondary: { main: "#54ABE3" },
+    primary: { main: "#14213d" },
+    secondary: { main: "#fca311" },
     background: {
-      paper: "#f1faee",
+      paper: "#ffffff",
       default: "#e5e5e5",
-      background: {
-        paper: "#edf2f4",
-        default: "#8d99ae"
-      }
-    }
+    },
   },
   typography: {
     fontFamily: "'Kanit', sans-serif",
@@ -26,8 +22,8 @@ const darkTheme = createTheme({
     type: "dark",
     background: {
       paper: "#f1faee",
-      default: "#8d99ae"
-    }
+      default: "#8d99ae",
+    },
   },
   typography: {
     fontFamily: "'Kanit', sans-serif",
