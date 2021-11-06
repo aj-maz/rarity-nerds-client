@@ -44,7 +44,7 @@ const CollectionCard = ({ collection }) => {
 				<div css={css`align-items: center;`}>
 					<Typography variant="h6">{collection.collectionName}</Typography>
 					<Typography variant="subtitle2">
-						Added At: {moment(collection.addedAt).format('YYYY/DD/MM HH:mm')}
+						Added At: {moment(collection.createdAt).format('YYYY/DD/MM HH:mm')}
 					</Typography>
 				</div>
 
@@ -66,10 +66,10 @@ const CollectionCard = ({ collection }) => {
 							right: 1em;
 						`}
 					>
-						{collection.markets.includes('pancake') && (
+						{collection.markets?.includes('pancake') && (
 							<Avatar src="https://fabboard.vercel.app/assets/pancakeswap_fav.ico" />
 						)}
-						{collection.markets.includes('nftkey') && (
+						{collection.markets?.includes('nftkey') && (
 							<Avatar src="https://fabboard.vercel.app/assets/nftkey.svg" />
 						)}
 					</AvatarGroup>
