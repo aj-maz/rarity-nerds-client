@@ -10,7 +10,7 @@ const CollectionCard = ({ collection }) => {
 			css={css`
 				cursor: pointer;
 				position: relative;
-        margin-bottom: 1em
+				margin-bottom: 1em;
 			`}
 		>
 			<div
@@ -24,8 +24,9 @@ const CollectionCard = ({ collection }) => {
 					css={css`
 						width: 100%;
 						height: 100%;
-            object-fit: cover
+						object-fit: cover;
 					`}
+					alt={collection.collectionName}
 				/>
 			</div>
 			<Avatar
@@ -41,7 +42,7 @@ const CollectionCard = ({ collection }) => {
 			/>
 			<div css={css`padding: 2em;`}>
 				<div css={css`align-items: center;`}>
-					<Typography variant="h6">{collection.title}</Typography>
+					<Typography variant="h6">{collection.collectionName}</Typography>
 					<Typography variant="subtitle2">
 						Added At: {moment(collection.addedAt).format('YYYY/DD/MM HH:mm')}
 					</Typography>
@@ -50,10 +51,21 @@ const CollectionCard = ({ collection }) => {
 				<Typography variant="body1">{collection.description}</Typography>
 				<div css={css`dipslay: flex;`}>
 					<Typography css={css`dipslay: inline-block;`} variant="subtitle1">
-						Total Volume: <span css={theme => css`color: ${theme.palette.secondary.main}`} > {collection.totalVolume} BNB </span>
+						Total Volume:{' '}
+						<span css={(theme) => css`color: ${theme.palette.secondary.main};`}>
+							{' '}
+							{collection.totalVolume} BNB{' '}
+						</span>
 					</Typography>
 
-					<AvatarGroup  css={css`text-align: left; position: absolute; bottom: -1em; right: 1em`} >
+					<AvatarGroup
+						css={css`
+							text-align: left;
+							position: absolute;
+							bottom: -1em;
+							right: 1em;
+						`}
+					>
 						{collection.markets.includes('pancake') && (
 							<Avatar src="https://fabboard.vercel.app/assets/pancakeswap_fav.ico" />
 						)}

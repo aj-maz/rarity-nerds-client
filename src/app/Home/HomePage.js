@@ -3,9 +3,10 @@
 import { css } from '@emotion/react';
 import { Grid } from '@mui/material';
 import CollectionCard from './CollectionCard';
+import { useQuery, gql } from '@apollo/client';
 
 const collection = {
-	title: 'Fxck Face',
+	collectionName: 'Fxck Face',
 	addedAt: new Date(),
 	totalVolume: 28398.23,
 	description: `Fxck Face is a collection of 5,555 
@@ -19,26 +20,46 @@ const collection = {
 	markets: [ 'pancake', 'nftkey' ]
 };
 
+const COLLECTIONS = gql`
+	query AdminCollections {
+		adminCollections {
+			_id
+			logo
+			collectionName
+			cover
+			address
+			description
+			chain
+			published
+		}
+	}
+`;
+
 const HomePage = () => {
+
+	const {data, loading, error} = useQuery(COLLECTIONS)
+
+	console.log(data, loading, error)
+
 	return (
 		<div css={css`margin: 2em;`}>
 			<Grid container spacing={2}>
-				<Grid item md={6}>
+				<Grid item md={3}>
 					<CollectionCard collection={collection} />
 				</Grid>
-				<Grid item md={6}>
+				<Grid item md={3}>
 					<CollectionCard collection={collection} />
 				</Grid>
-        <Grid item md={6}>
+				<Grid item md={3}>
 					<CollectionCard collection={collection} />
 				</Grid>
-				<Grid item md={6}>
+				<Grid item md={3}>
 					<CollectionCard collection={collection} />
 				</Grid>
-        <Grid item md={6}>
+				<Grid item md={3}>
 					<CollectionCard collection={collection} />
 				</Grid>
-				<Grid item md={6}>
+				<Grid item md={3}>
 					<CollectionCard collection={collection} />
 				</Grid>
 			</Grid>

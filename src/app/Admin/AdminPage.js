@@ -16,8 +16,8 @@ const AdminPage = () => {
 				onClick={() => {
 					navigate('add-collection');
 				}}
-				variant="text"
-				color="primary"
+				variant="outlined"
+				color="secondary"
 			>
 				Add Collection
 			</Button>
