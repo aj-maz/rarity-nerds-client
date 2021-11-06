@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Header from './common/Header';
 import HomePage from './Home/HomePage';
 
+import CollectionPage from './Collection/CollectionPage'
+
 import AdminPage from './Admin/AdminPage';
 import AddCollection from './Admin/CollectionControl/AddCollection';
 
@@ -12,7 +14,8 @@ const Router = () => {
 			<Header />
 			<Routes>
 				<Route path="/">
-					<Route index element={<HomePage />} />
+				<Route index element={<HomePage />} />
+				<Route path="collection/:id" element={<CollectionPage />} />
 				</Route>
 				<Route path="/admin" >
 					<Route index element={<AdminPage />} />

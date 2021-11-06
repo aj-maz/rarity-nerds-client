@@ -17,6 +17,7 @@ const COLLECTIONS = gql`
 			description
 			chain
 			published
+			markets
 		}
 	}
 `;

@@ -3,8 +3,12 @@
 import { css } from '@emotion/react';
 import { Paper, Typography, Avatar, AvatarGroup } from '@mui/material';
 import moment from 'moment';
+import { useNavigate } from 'react-router-dom'
 
 const CollectionCard = ({ collection }) => {
+
+	const navigate = useNavigate()
+
 	return (
 		<Paper
 			css={css`
@@ -12,6 +16,9 @@ const CollectionCard = ({ collection }) => {
 				position: relative;
 				margin-bottom: 1em;
 			`}
+			onClick={() => {
+				navigate(`collection/${collection._id}`)
+			}}
 		>
 			<div
 				css={css`
