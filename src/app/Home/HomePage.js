@@ -7,8 +7,8 @@ import { useQuery, gql } from '@apollo/client';
 import Loader from '../common/Loader';
 
 const COLLECTIONS = gql`
-	query AdminCollections {
-		adminCollections {
+	query userCollections {
+		userCollections {
 			_id
 			logo
 			collectionName
@@ -18,6 +18,7 @@ const COLLECTIONS = gql`
 			chain
 			published
 			markets
+			createdAt
 		}
 	}
 `;
@@ -41,7 +42,7 @@ const HomePage = () => {
 	return (
 		<div css={css`margin: 2em;`}>
 			<Grid container spacing={2}>
-				{data.adminCollections.map((collection) => (
+				{data.userCollections.map((collection) => (
 					<Grid item xl={3} lg={4} md={6} key={collection._id}>
 						<CollectionCard collection={collection} />
 					</Grid>

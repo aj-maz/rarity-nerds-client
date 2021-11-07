@@ -50,7 +50,7 @@ const CollectionCard = ({ collection }) => {
 				<div css={css`align-items: center;`}>
 					<Typography css={theme => css`color: ${theme.palette.primary.dark}`} variant="h6">{collection.collectionName}</Typography>
 					<Typography variant="subtitle2">
-						Added At: <span css={theme => css`color: ${theme.palette.secondary.main}`} >{moment(collection.createdAt).format('YYYY/DD/MM HH:mm')}</span>
+						Added At: <span css={theme => css`color: ${theme.palette.secondary.main}`} >{moment(Number(collection.createdAt)).format('YYYY/DD/MM HH:mm')}</span>
 					</Typography>
 				</div>
 
@@ -83,6 +83,7 @@ const CollectionCard = ({ collection }) => {
 							<Avatar src="https://fabboard.vercel.app/assets/nftkey.svg" />
 						)}
 					</AvatarGroup>
+
 				</div>
 			</div>
 		</Paper>
