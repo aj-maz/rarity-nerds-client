@@ -3,11 +3,10 @@
 import { css } from '@emotion/react';
 import { Paper, Typography, Avatar, AvatarGroup } from '@mui/material';
 import moment from 'moment';
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 
 const CollectionCard = ({ collection }) => {
-
-	const navigate = useNavigate()
+	const navigate = useNavigate();
 
 	return (
 		<Paper
@@ -17,7 +16,7 @@ const CollectionCard = ({ collection }) => {
 				margin-bottom: 1em;
 			`}
 			onClick={() => {
-				navigate(`collection/${collection._id}`)
+				navigate(`collection/${collection._id}`);
 			}}
 		>
 			<div
@@ -49,13 +48,17 @@ const CollectionCard = ({ collection }) => {
 			/>
 			<div css={css`padding: 2em;`}>
 				<div css={css`align-items: center;`}>
-					<Typography variant="h6">{collection.collectionName}</Typography>
+					<Typography css={theme => css`color: ${theme.palette.primary.dark}`} variant="h6">{collection.collectionName}</Typography>
 					<Typography variant="subtitle2">
-						Added At: {moment(collection.createdAt).format('YYYY/DD/MM HH:mm')}
+						Added At: <span css={theme => css`color: ${theme.palette.secondary.main}`} >{moment(collection.createdAt).format('YYYY/DD/MM HH:mm')}</span>
 					</Typography>
 				</div>
 
-				<Typography variant="body1">{collection.description}</Typography>
+				<div css={css`height: 180px; overflow: hidden`}>
+					<Typography css={css`height: 100%; overflow: auto; '`} variant="body1">
+						{collection.description}
+					</Typography>
+				</div>
 				<div css={css`dipslay: flex;`}>
 					<Typography css={css`dipslay: inline-block;`} variant="subtitle1">
 						Total Volume:{' '}
@@ -73,10 +76,10 @@ const CollectionCard = ({ collection }) => {
 							right: 1em;
 						`}
 					>
-						{collection.markets?.includes('pancake') && (
+						{collection.markets.includes('pancake') && (
 							<Avatar src="https://fabboard.vercel.app/assets/pancakeswap_fav.ico" />
 						)}
-						{collection.markets?.includes('nftkey') && (
+						{collection.markets.includes('nftkey') && (
 							<Avatar src="https://fabboard.vercel.app/assets/nftkey.svg" />
 						)}
 					</AvatarGroup>

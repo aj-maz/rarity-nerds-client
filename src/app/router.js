@@ -7,6 +7,7 @@ import CollectionPage from './Collection/CollectionPage'
 
 import AdminPage from './Admin/AdminPage';
 import AddCollection from './Admin/CollectionControl/AddCollection';
+import CollectionDetails from './Admin/CollectionControl/CollectionDetails';
 
 const Router = () => {
 	return (
@@ -20,6 +21,7 @@ const Router = () => {
 				<Route path="/admin" >
 					<Route index element={<AdminPage />} />
 					<Route path="add-collection" element={<AddCollection />} />
+					<Route path="collection/:_id" element={<CollectionDetails />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>
