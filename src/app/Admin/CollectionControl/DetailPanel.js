@@ -6,6 +6,8 @@ import moment from 'moment';
 import { useNavigate } from 'react-router-dom';
 import { Publish, Unpublished, Edit } from '@mui/icons-material';
 import { gql, useMutation } from '@apollo/client';
+import EditCollectionDialog from './EditCollectionDialog';
+import { useState } from 'react';
 
 const CHANGE_PUBLICITY = gql`
 	mutation ChangePublicity($_id: ID!) {
@@ -15,7 +17,7 @@ const CHANGE_PUBLICITY = gql`
 
 const CollectionCard = ({ collection, refetch }) => {
 	const navigate = useNavigate();
-
+	const [ isEdit, setEdit ] = useState();
 
 	const [ changePublicity ] = useMutation(CHANGE_PUBLICITY);
 
@@ -26,6 +28,7 @@ const CollectionCard = ({ collection, refetch }) => {
 				margin-bottom: 1em;
 			`}
 		>
+			<EditCollectionDialog collection={collection} open={isEdit} setOpen={setEdit} refetch={refetch} />
 			<div
 				css={css`
 					text-align: left;
@@ -34,7 +37,7 @@ const CollectionCard = ({ collection, refetch }) => {
 					left: 1em;
 				`}
 			>
-				<IconButton color="secondary" css={css`margin-right: 4px;`}>
+				<IconButton onClick={() => setEdit(true)} color="secondary" css={css`margin-right: 4px;`}>
 					<Edit />
 				</IconButton>
 
