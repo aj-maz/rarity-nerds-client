@@ -11,6 +11,7 @@ import { gql, useQuery } from '@apollo/client';
 import { useParams } from 'react-router-dom';
 
 import DetailPanel from './DetailPanel';
+import ActionControl from './ActionControl'
 import Loader from '../../common/Loader'
 
 const COLLECTION = gql`
@@ -35,8 +36,6 @@ const CollectionDetails = () => {
 
 	const { data, loading, error, refetch } = useQuery(COLLECTION, { variables: {_id} });
 
-    console.log(data, loading, error)
-
     if (loading) {
 		return (
 			<div
@@ -55,6 +54,7 @@ const CollectionDetails = () => {
 	return (
 		<div>
 			<DetailPanel collection={collection} refetch={refetch} />
+			<ActionControl collection={collection}  />
 		</div>
 	);
 };

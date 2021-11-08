@@ -4,7 +4,7 @@ import { css } from '@emotion/react';
 import GridLoader from 'react-spinners/GridLoader';
 import { useTheme } from '@mui/material'
 
-const Loader = ({loading}) => {
+const Loader = ({loading, size = 40}) => {
     const theme = useTheme()
     return (
 		<div
@@ -16,7 +16,7 @@ const Loader = ({loading}) => {
 				justify-content: center;
 			`}
 		>
-			<GridLoader color={theme.palette.primary.main} loading={true}  size={40} />
+			<GridLoader color={theme.palette.primary.main} loading={true}  size={size} />
 		</div>
 	);
 };
