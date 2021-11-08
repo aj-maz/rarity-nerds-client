@@ -48,42 +48,26 @@ const CollectionCard = ({ collection }) => {
 			/>
 			<div css={css`padding: 2em;`}>
 				<div css={css`align-items: center;`}>
-					<Typography css={theme => css`color: ${theme.palette.primary.dark}`} variant="h6">{collection.collectionName}</Typography>
+					<Typography css={(theme) => css`color: ${theme.palette.primary.dark};`} variant="h6">
+						{collection.collectionName}
+					</Typography>
 					<Typography variant="subtitle2">
-						Added At: <span css={theme => css`color: ${theme.palette.secondary.main}`} >{moment(Number(collection.createdAt)).format('YYYY/DD/MM HH:mm')}</span>
+						Added At:{' '}
+						<span css={(theme) => css`color: ${theme.palette.secondary.main};`}>
+							{moment(Number(collection.createdAt)).format('YYYY/DD/MM HH:mm')}
+						</span>
 					</Typography>
 				</div>
 
-				<div css={css`height: 180px; overflow: hidden`}>
+				<div
+					css={css`
+						height: 180px;
+						overflow: hidden;
+					`}
+				>
 					<Typography css={css`height: 100%; overflow: auto; '`} variant="body1">
 						{collection.description}
 					</Typography>
-				</div>
-				<div css={css`dipslay: flex;`}>
-					<Typography css={css`dipslay: inline-block;`} variant="subtitle1">
-						Total Volume:{' '}
-						<span css={(theme) => css`color: ${theme.palette.secondary.main};`}>
-							{' '}
-							{collection.totalVolume} BNB{' '}
-						</span>
-					</Typography>
-
-					<AvatarGroup
-						css={css`
-							text-align: left;
-							position: absolute;
-							bottom: -1em;
-							right: 1em;
-						`}
-					>
-						{collection.markets.includes('pancake') && (
-							<Avatar src="https://fabboard.vercel.app/assets/pancakeswap_fav.ico" />
-						)}
-						{collection.markets.includes('nftkey') && (
-							<Avatar src="https://fabboard.vercel.app/assets/nftkey.svg" />
-						)}
-					</AvatarGroup>
-
 				</div>
 			</div>
 		</Paper>

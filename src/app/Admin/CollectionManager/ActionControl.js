@@ -46,7 +46,8 @@ const ActionControl = ({ collection }) => {
 	const { data, loading, error, refetch } = useQuery(FETCHING_STATUS, {
 		variables: {
 			_id: collection._id
-		}
+		},
+		pollInterval: 4000,
 	});
 
 

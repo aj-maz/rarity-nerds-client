@@ -74,37 +74,7 @@ const CollectionCard = ({ collection, refetch }) => {
 				<Typography css={css`text-align: center; '`} variant="body1">
 					{collection.description}
 				</Typography>
-				<div css={css`dipslay: flex;`}>
-					<Typography
-						css={css`
-							dipslay: inline-block;
-							text-align: center;
-						`}
-						variant="subtitle1"
-					>
-						Total Volume:{' '}
-						<span css={(theme) => css`color: ${theme.palette.secondary.main};`}>
-							{' '}
-							{collection.totalVolume} BNB{' '}
-						</span>
-					</Typography>
-
-					<AvatarGroup
-						css={css`
-							text-align: left;
-							position: absolute;
-							bottom: -1em;
-							right: 1em;
-						`}
-					>
-						{collection.markets.includes('pancake') && (
-							<Avatar src="https://fabboard.vercel.app/assets/pancakeswap_fav.ico" />
-						)}
-						{collection.markets.includes('nftkey') && (
-							<Avatar src="https://fabboard.vercel.app/assets/nftkey.svg" />
-						)}
-					</AvatarGroup>
-				</div>
+				
 			</div>
 		</Paper>
 	);

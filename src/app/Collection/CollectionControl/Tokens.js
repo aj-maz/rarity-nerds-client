@@ -38,7 +38,8 @@ const Tokens = ({ collection, total, collectionId, filters, sortBy, traits, filt
 			sortBy,
 			offset,
 			filterIds: filterIds.map((id) => String(id))
-		}
+		},
+		pollInterval: 4000,
 	});
 
 	useEffect(
