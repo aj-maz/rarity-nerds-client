@@ -6,8 +6,8 @@ import HomePage from './Home/HomePage';
 import CollectionPage from './Collection/CollectionPage'
 
 import AdminPage from './Admin/AdminPage';
-import AddCollection from './Admin/CollectionControl/AddCollection';
-import CollectionDetails from './Admin/CollectionControl/CollectionDetails';
+import AddCollection from './Admin/CollectionManager/AddCollection';
+import CollectionDetails from './Admin/CollectionManager/CollectionDetails';
 
 const Router = () => {
 	return (

@@ -14,6 +14,8 @@ import DetailPanel from './DetailPanel';
 import ActionControl from './ActionControl'
 import Loader from '../../common/Loader'
 
+import Traits from '../../Collection/CollectionControl/CollectionControl'
+
 const COLLECTION = gql`
 	query Collection($_id: ID!) {
 		collection(_id: $_id) {
@@ -55,6 +57,8 @@ const CollectionDetails = () => {
 		<div>
 			<DetailPanel collection={collection} refetch={refetch} />
 			<ActionControl collection={collection}  />
+
+			<Traits collectionId={collection._id} tokensCount={7777} />
 		</div>
 	);
 };

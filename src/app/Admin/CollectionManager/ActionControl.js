@@ -49,7 +49,6 @@ const ActionControl = ({ collection }) => {
 		}
 	});
 
-	console.log(data, loading, error);
 
 	const [ formInput, setForm ] = useState({
 		minId: '',
