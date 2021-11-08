@@ -34,7 +34,6 @@ const COLLECTION = gql`
 
 const CollectionDetails = () => {
 	const { _id } = useParams();
-	console.log(_id);
 
 	const { data, loading, error, refetch } = useQuery(COLLECTION, { variables: {_id} });
 
@@ -58,7 +57,7 @@ const CollectionDetails = () => {
 			<DetailPanel collection={collection} refetch={refetch} />
 			<ActionControl collection={collection}  />
 
-			<Traits collectionId={collection._id} tokensCount={7777} />
+			<Traits collectionId={collection._id} collection={collection} tokensCount={7777} />
 		</div>
 	);
 };

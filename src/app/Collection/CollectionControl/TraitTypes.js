@@ -37,9 +37,6 @@ const TraitTypes = ({ traits, filters, addFilter, removeFilter, selectedList, se
 			}
 		}, []);
 	};
-
-	console.log(filters);
-
 	return (
 		<div>
 			<List>
@@ -51,8 +48,6 @@ const TraitTypes = ({ traits, filters, addFilter, removeFilter, selectedList, se
 							filter.payload.includes(trait.trait_type)
 						);
 					});
-
-					console.log(checkedIndex);
 					return (
 						<ListItem
 							css={

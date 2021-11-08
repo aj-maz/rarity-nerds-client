@@ -16,7 +16,7 @@ const Loader = ({loading, size = 40}) => {
 				justify-content: center;
 			`}
 		>
-			<GridLoader color={theme.palette.primary.main} loading={true}  size={size} />
+			<GridLoader color={theme.palette.secondary.main} loading={true}  size={size} />
 		</div>
 	);
 };

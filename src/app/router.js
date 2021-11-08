@@ -16,7 +16,7 @@ const Router = () => {
 			<Routes>
 				<Route path="/">
 				<Route index element={<HomePage />} />
-				<Route path="collection/:id" element={<CollectionPage />} />
+				<Route path="collection/:_id" element={<CollectionPage />} />
 				</Route>
 				<Route path="/admin" >
 					<Route index element={<AdminPage />} />
