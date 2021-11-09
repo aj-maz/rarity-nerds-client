@@ -61,7 +61,7 @@ const CollectionCard = ({ collection }) => {
 
 				<div
 					css={css`
-						height: 180px;
+						height: 100px;
 						overflow: hidden;
 					`}
 				>

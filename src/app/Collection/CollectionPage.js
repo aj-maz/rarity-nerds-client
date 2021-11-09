@@ -11,9 +11,9 @@ import { gql, useQuery } from '@apollo/client';
 import { useParams } from 'react-router-dom';
 
 import DetailPanel from './DetailPanel';
-import Loader from '../common/Loader'
+import Loader from '../common/Loader';
 
-import Traits from './CollectionControl/CollectionControl'
+import Traits from './CollectionControl/CollectionControl';
 
 const COLLECTION = gql`
 	query Collection($_id: ID!) {
@@ -26,7 +26,8 @@ const COLLECTION = gql`
 			description
 			published
 			markets
-            createdAt
+			createdAt
+			total
 		}
 	}
 `;
@@ -34,9 +35,9 @@ const COLLECTION = gql`
 const CollectionDetails = () => {
 	const { _id } = useParams();
 
-	const { data, loading, error, refetch } = useQuery(COLLECTION, { variables: {_id} });
+	const { data, loading, error, refetch } = useQuery(COLLECTION, { variables: { _id } });
 
-    if (loading) {
+	if (loading) {
 		return (
 			<div
 				css={css`
@@ -49,13 +50,13 @@ const CollectionDetails = () => {
 		);
 	}
 
-    const { collection } = data
+	const { collection } = data;
 
 	return (
 		<div>
 			<DetailPanel collection={collection} refetch={refetch} />
 
-			<Traits collectionId={collection._id} collection={collection} tokensCount={7777} />
+			<Traits collectionId={collection._id} collection={collection} tokensCount={collection.total} />
 		</div>
 	);
 };

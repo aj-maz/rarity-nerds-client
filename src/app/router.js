@@ -18,11 +18,11 @@ const Router = () => {
 				<Route index element={<HomePage />} />
 				<Route path="collection/:_id" element={<CollectionPage />} />
 				</Route>
-				<Route path="/admin" >
+				{/*<Route path="/admin" >
 					<Route index element={<AdminPage />} />
 					<Route path="add-collection" element={<AddCollection />} />
 					<Route path="collection/:_id" element={<CollectionDetails />} />
-				</Route>
+	</Route>*/}
 			</Routes>
 		</BrowserRouter>
 	);

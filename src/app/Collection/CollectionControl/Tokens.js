@@ -104,7 +104,7 @@ const Tokens = ({ collection, total, collectionId, filters, sortBy, traits, filt
 							`}
 						>
 							<Pagination
-								count={parseInt(Number(data.tokens.total) / 20) + 1}
+								count={parseInt(Number(data.tokens.total) / 20)}
 								page={parseInt(offset / 20) + 1}
 								onChange={(e, page) => {
 									setOffset((page - 1) * 20);

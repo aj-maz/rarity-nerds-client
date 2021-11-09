@@ -22,7 +22,7 @@ import TokenCard from './TokenCard';
 const ipfsConvert = (tokenURL) => {
 	let target =
 		tokenURL && tokenURL.includes('ipfs')
-			? tokenURL.replace('ipfs://', 'https://cloudflare-ipfs.com/ipfs/')
+			? tokenURL.replace('ipfs://', 'https://ipfs.2read.net/ipfs/')
 			: tokenURL;
 	return target;
 };

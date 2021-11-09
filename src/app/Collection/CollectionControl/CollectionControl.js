@@ -29,7 +29,7 @@ const CollectionControl = ({ collection, collectionId, tokensCount }) => {
 	const [ filterIds, setFilterIds ] = useState([]);
 	const [ sortBy, setSortBy ] = useState('normalized');
 
-	const [ minimize, setMinimize ] = useState(false);
+	const [ minimize, setMinimize ] = useState(true);
 
 	const addFilter = (filter) => {
 		setFilters([ ...filters, filter ]);
@@ -42,7 +42,8 @@ const CollectionControl = ({ collection, collectionId, tokensCount }) => {
 	const { data, loading, error } = useQuery(TRAITS, {
 		variables: {
 			collectionId
-		}
+		},
+		pollInterval: 10000
 	});
 
 	return (

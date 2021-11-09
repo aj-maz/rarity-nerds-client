@@ -28,6 +28,7 @@ const COLLECTION = gql`
 			published
 			markets
             createdAt
+			total
 		}
 	}
 `;
@@ -35,7 +36,7 @@ const COLLECTION = gql`
 const CollectionDetails = () => {
 	const { _id } = useParams();
 
-	const { data, loading, error, refetch } = useQuery(COLLECTION, { variables: {_id} });
+	const { data, loading, error, refetch } = useQuery(COLLECTION, { variables: {_id}, pollInterval: 10000 });
 
     if (loading) {
 		return (
@@ -57,7 +58,7 @@ const CollectionDetails = () => {
 			<DetailPanel collection={collection} refetch={refetch} />
 			<ActionControl collection={collection}  />
 
-			<Traits collectionId={collection._id} collection={collection} tokensCount={7777} />
+			<Traits collectionId={collection._id} collection={collection} tokensCount={collection.total} />
 		</div>
 	);
 };

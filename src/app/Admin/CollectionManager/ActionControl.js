@@ -168,6 +168,7 @@ const ActionControl = ({ collection }) => {
 									console.log('Calculating Rarity');
 								})
 								.catch((err) => {
+									console.log(err)
 									console.log('Some Error happened');
 								});
 						}}
