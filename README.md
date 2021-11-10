@@ -1,5 +1,5 @@
 
-## [Rarity Nerds - Live Site](https://www.rarity-nerds.com/collection)
+## [Rarity Nerds - Live Site](https://www.rarity-nerds.com)
 
 ![Screen Shot 1400-08-18 at 04 36 17](https://user-images.githubusercontent.com/64213712/140919547-b170a2d9-ab95-4bb2-a9f4-3e2494541849.png)
 ![Screen Shot 1400-08-18 at 09 22 12](https://user-images.githubusercontent.com/64213712/140919620-6b21dcc8-ae41-49a9-b992-8f5f0eb2de63.png)
