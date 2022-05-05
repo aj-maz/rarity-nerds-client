@@ -6,7 +6,7 @@
 ![Screen Shot 1400-08-18 at 15 24 31](https://user-images.githubusercontent.com/64213712/140919711-b08eb60a-8d5f-434a-9bae-ef0783f64352.png)
 
 
-### [I disabled adding collection feature on live version because it could be abused but showed a demo in youtube video](https://youtu.be/OqY9Vg3AQWU)
+### [I disabled adding collection feature on live version because it could be abused but showed a demo in youtube video](https://youtu.be/qlti8tHNnl4)
 
 
 [Server Repository](https://github.com/Ajand/rarity-nerds-server)
